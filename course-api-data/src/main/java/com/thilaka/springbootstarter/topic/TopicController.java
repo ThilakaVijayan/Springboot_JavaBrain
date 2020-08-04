@@ -2,6 +2,8 @@ package com.thilaka.springbootstarter.topic;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,11 +20,14 @@ public class TopicController {
 	@Autowired
 	private TopicService topicService;
 	
+	Logger logger = LoggerFactory.getLogger(TopicController.class);
+	
 	@RequestMapping(method = RequestMethod.GET,value =  "/topics")
 	@ApiOperation(value = "List of topics",
 				notes = "List all the topics",
 				response = Topic.class)
 	public List<Topic> getAllTopics() {
+		logger.trace("getAllTopics method is called.");
 		return topicService.getAllTopics();
 	}
 	
@@ -31,6 +36,7 @@ public class TopicController {
 				notes = "Get one topic by Id",
 				response = Topic.class)
 	public Topic getTopic(@PathVariable String id) {
+		logger.info("getTopic method is called with input Id - "+ id);
 		return topicService.getTopic(id);
 	}
 	
