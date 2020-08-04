@@ -3,12 +3,21 @@ package com.thilaka.springbootstarter.topic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
+@ApiModel(description = "Topic of the subject")
 public class Topic {
 	
 	@Id
+	@ApiModelProperty(notes = "The unique id of the topic")
 	private String id;
+	
+	@ApiModelProperty(notes = "Topic name")
 	private String name;
+	
+	@ApiModelProperty(notes = "Topic description")
 	private String description;
 	
 	

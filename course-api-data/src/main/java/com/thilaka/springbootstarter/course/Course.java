@@ -6,12 +6,21 @@ import javax.persistence.ManyToOne;
 
 import com.thilaka.springbootstarter.topic.Topic;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
+@ApiModel(description = "Course of the Topic")
 public class Course {
 	
 	@Id
+	@ApiModelProperty(notes = "The unique id of the Course")
 	private String id;
+	
+	@ApiModelProperty(notes = "Course name")
 	private String name;
+	
+	@ApiModelProperty(notes = "Course description")
 	private String description;
 	
 	@ManyToOne
