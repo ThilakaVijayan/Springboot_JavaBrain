@@ -1,9 +1,9 @@
 This is build using RESTFul API to create an end to end flow.
-Java 14 is used.
+Java 14 is used. Swagger version - 3.0
 
-http://localhost:8080/topics
+http://localhost:8080/api/topics
 
-http://localhost:8080/topics/courses
+http://localhost:8080/api/topics/courses
 
 Get, Post, Put and Delete API for these urls.
 
@@ -64,4 +64,11 @@ mvn clean install
 java jar <jarname>
 ```
 
+### Swagger & Docket:
+add this in the `pom.xml` in the `dependency` - `springfox-boot-starter`
 
+http://localhost:8080/swagger-ui/index.html#/
+
+http://localhost:8080/v2/api-docs
+
+Various configuations are done to show it in the swagger UI.
