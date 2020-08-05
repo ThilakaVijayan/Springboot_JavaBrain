@@ -72,3 +72,10 @@ http://localhost:8080/swagger-ui/index.html#/
 http://localhost:8080/v2/api-docs
 
 Various configuations are done to show it in the swagger UI.
+
+### Logging:
+Spring boot includes the logging framework.
+Loggers can be configured by - both are done in this project.
+- Application property values
+- XML file
+
